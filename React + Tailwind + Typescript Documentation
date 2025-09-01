@@ -1,0 +1,59 @@
+## Create a folder by run the commamnd
+--> npm create vite@latest my-app
+
+## Then Open Terminal and Navigate to the created app folder
+--> cd my-app
+
+## For adding required dependencies
+--> npm install
+
+## For run the code
+--> npm run dev
+
+## Create postcss.config.js (in project root)
+--> export default {
+  	plugins: {
+    	'@tailwindcss/postcss': {},
+    	autoprefixer: {},
+  	},
+    }
+
+
+## Create tailwind.config.js (in project root)
+--> /** @type {import('tailwindcss').Config} */
+	export default {
+  	content: [
+    		"./index.html",
+    		"./src/**/*.{js,ts,jsx,tsx}",
+  	],
+  		theme: {
+    		extend: {},
+  		},
+ 		plugins: [],
+       }
+
+## Open src/main.css or src/index.css and add this
+--> 	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+## Paste the code into app.tsx
+--> export default function App() {
+  	return (
+    	<div className="flex h-screen items-center justify-center bg-gray-100">
+      	<h1 className="text-4xl font-bold text-blue-600">
+        	Tailwind is working 🎉
+      	</h1>
+    	</div>
+  	);
+    }
+    
+## Then Run the code 
+--> npm run dev
+
+## If you facing error run it into terminal
+--> npm install -D @tailwindcss/postcss
+
+## If you need to use shadcn ui's follow the documentation to implement in your project
+--> https://ui.shadcn.com/
+    
